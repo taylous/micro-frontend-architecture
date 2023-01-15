@@ -7,9 +7,11 @@ import Home from './components/Home';
 
 // micro frontends prefix
 import { prefix } from './micro/remote0/urls';
+import { prefix as remote1Prefix } from './micro/remote1/urls';
 
 // micro frontends
 const RemoteApp0 = lazy(() => import('./micro/remote0/App'));
+const RemoteApp1 = lazy(() => import('./micro/remote1/App'));
 
 function App() {
   console.group('Container history & location');
@@ -29,6 +31,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path={`${prefix}/*`} element={<RemoteApp0 />} />
+            <Route path={`${remote1Prefix}/*`} element={<RemoteApp1 />} />
           </Routes>
         </Suspense>
       </div>

@@ -9,17 +9,9 @@ module.exports = {
           name: 'container',
           remotes: {
             remote0: 'remote0@http://localhost:4000/remoteEntry.js',
+            remote1: 'remote1@http://localhost:4001/remoteEntry.js',
           },
-          shared: {
-            ...dependencies,
-            'react-router-dom': {
-              singleton: true,
-            },
-            react: {
-              requiredVersion: dependencies.react,
-              singleton: true,
-            },
-          },
+          shared: dependencies,
         }),
       ],
     },

@@ -16,15 +16,7 @@ module.exports = {
             './App': './src/bootstrap',
             './Button': './src/components/Button',
           },
-          shared: {
-            ...dependencies,
-            'react-router-dom': {
-              singleton: true,
-            },
-            react: {
-              singleton: true,
-            },
-          },
+          shared: dependencies,
         }),
       ],
     },
